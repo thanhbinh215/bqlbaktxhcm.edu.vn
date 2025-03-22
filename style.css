@@ -1361,7 +1361,7 @@ button:hover {
 }
 
 /* Media Queries */
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   html {
     font-size: 30%;
   }
@@ -1371,7 +1371,7 @@ button:hover {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 900px) {
   #menu-btn {
     display: inline-block;
   }
@@ -1589,7 +1589,7 @@ input[type="radio"] {
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+@media (max-width: 450) {
   .payment-section {
     padding: 20px;
   }
