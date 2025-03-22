@@ -565,11 +565,15 @@ button:hover {
   max-width: 60rem;
  
 }
-@media (max-width: 700px) {
-  .home .content h3{
-    text-align: center;
-    
-    
+@media (max-width: 768px) {
+  .home .content h3 {
+    font-size: 30px; /* Giảm khi màn hình nhỏ hơn 768px */
+  }
+}
+
+@media (max-width: 480px) {
+  .home .content h3 {
+    font-size: 24px; /* Giảm khi màn hình nhỏ hơn 480px */
   }
 }
 
