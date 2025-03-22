@@ -445,6 +445,20 @@ button:hover {
 .header .icons div:hover {
   color: var(--text-color);
 }
+/* moi up */
+@media screen and (max-width: 768px) {
+  header {
+    position: relative;
+    top: 0;
+    padding: 10px;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column; /* Sắp xếp menu theo chiều dọc */
+  }
+}
+
 
 .menu-btn {
   display: none;
@@ -1310,7 +1324,9 @@ button:hover {
   padding: 10px;
   background: rgb(227, 227, 227); /* Màu nền xanh có độ mờ */
   color: rgb(0, 0, 0);
-  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  word-wrap: break-word;
   display: flex;
   flex-direction: column;
   align-items: center;
