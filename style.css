@@ -581,7 +581,6 @@ button:hover {
 
 .home .content h3 {
   font-size: 50px;
-  margin-left: 30px;
   text-transform: uppercase;
   /* color: var(--text-color); */
   color: #fff;
@@ -594,7 +593,6 @@ button:hover {
   color: #fff;
   padding: 1rem 0;
   line-height: 1.8;
-  margin-left: 30px;
 }
 
 /* About Styles */
@@ -1378,7 +1376,7 @@ button:hover {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 400px) {
   html {
     font-size: 30%;
   }
@@ -1388,7 +1386,7 @@ button:hover {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 400px) {
   #menu-btn {
     display: inline-block;
   }
@@ -1434,14 +1432,16 @@ button:hover {
 
   .home .content h3 {
     font-size: 4.5rem;
+    text-align: center;
   }
 
   .home .content p {
     font-size: 1.2rem;
+    text-align: center;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 450px) {
   html {
     font-size: 50%;
   }
