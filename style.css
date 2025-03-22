@@ -1441,7 +1441,7 @@ button:hover {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 768px) {
   html {
     font-size: 50%;
   }
