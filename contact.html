@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kí Túc Xá Đại Học Quốc Gia HCM</title>
+    <link rel="stylesheet" href="preloaderStyle.css">
+    <link rel="icon" href="https://sv.ktxhcm.edu.vn/assets/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS Tùy chỉnh -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script src="script.js"></script>
+    <script>
+        //xóa phần tử trong ô tìm kiếm
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.getElementById("flavor-filter");
+            const clearBtn = document.getElementById("clear-search");
+
+            if (!searchInput || !clearBtn) {
+                console.error("Không tìm thấy phần tử cần thiết!");
+                return;
+            }
+
+            searchInput.addEventListener("input", function () {
+                console.log("Người dùng nhập:", searchInput.value); // Debug log
+                clearBtn.style.display = searchInput.value.trim() ? "block" : "none";
+            });
+
+            clearBtn.addEventListener("click", function () {
+                console.log("Xóa nội dung ô tìm kiếm"); // Debug log
+                searchInput.value = "";
+                clearBtn.style.display = "none";
+
+                // Kích hoạt sự kiện `input` để cập nhật danh sách tìm kiếm
+                searchInput.dispatchEvent(new Event("input"));
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <script>
+  if (window.location.pathname.endsWith(".html")) {
+    history.replaceState(null, "", window.location.pathname.replace(".html", ""));
+  }
+</script>
+    
+    <!-- Phần Header Bắt đầu -->
+    <header class="header">
+
+        <a href="#" class="logo">
+            <img src="https://sv.ktxhcm.edu.vn/assets/img/logo.png" alt="Logo">
+        </a>
+        <!-- Nút Toggle (Hamburger) -->
+        <div class="menu-btn" id="menu-btn">
+            <span class="fas fa-bars"></span>
+        </div>
+        <h1 class="site-title" style="white-space: nowrap;text-transform: uppercase;">Trang thông tin thiết bị và vật
+            dụng <br>ký túc xá ĐHQG-HCM</h1>
+
+        <nav class="navbar">
+            <a href="index.html">Trang chủ</a>
+            <!-- <a href="about_us_page.html">Giới thiệu</a> -->
+            <a href="contact.html">Liên Hệ</a>
+        </nav>
+
+        <div style="position: relative; display: inline-block; width: 100%; max-width: 400px;">
+            <input style="margin: 0 10px;
+                          border: 2px solid black;
+                          border-radius: 5px;
+                          background-color: #fff;
+                          width: calc(100% - 10px);
+                          color: black;
+                          padding: 10px;
+                          padding-right: 35px;
+                          " type="text" id="flavor-filter" placeholder="Tìm kiếm vật dụng...">
+
+            <!-- Nút xóa -->
+            <span id="clear-search" style="position: absolute;
+            right: 10px; /* Cố định sát mép phải */
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 16px;
+            color: gray;
+            display: none;">
+                ⨷
+            </span>
+        </div>
+
+        <!-- Biểu tượng -->
+
+
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox">
+                <div class="slider"></div>
+            </label>
+            <span id="mode-label">Light Mode</span>
+        </div>
+
+        <style>
+            .hidden {
+                display: none;
+            }
+        </style>
+
+    </header>
+    <!-- backtotop -->
+    <script>
+        window.addEventListener("scroll", function () {
+            const backToTopButton = document.getElementById("back-to-top");
+
+            if (window.scrollY > 200) { // Khi cuộn xuống 200px thì hiện nút
+                backToTopButton.style.display = "flex";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+    </script>
+    <button id="back-to-top" onclick="scrollToTop()">
+        ↑
+    </button>
+
+
+
+    <script>
+        //list fb
+        //bắt sự kiện display: none; cho menu link fb
+        document.addEventListener("DOMContentLoaded", function () {
+            let fbLink = document.getElementById("fb-link");
+            let menu = document.getElementById("fb-menu");
+
+            // Ẩn menu khi tải trang
+            menu.style.display = "none";
+
+            // Toggle hiển thị menu khi click vào nút Facebook
+            fbLink.addEventListener("click", function (event) {
+                event.preventDefault();
+                event.stopPropagation(); // Ngăn chặn sự kiện click lan ra document
+                menu.style.display = menu.style.display === "block" ? "none" : "block";
+            });
+
+            // Ẩn menu khi click ra ngoài
+            document.addEventListener("click", function (event) {
+                if (!fbLink.contains(event.target) && !menu.contains(event.target)) {
+                    menu.style.display = "none";
+                }
+            });
+            // Ẩn menu khi click vào bất kỳ link nào trong menu
+            links.forEach(link => {
+                link.addEventListener("click", function () {
+                    menu.style.display = "none";
+                });
+            });
+        });
+
+
+
+    </script>
+    <script>
+        // Lấy nút toggle, thanh navbar (menu), và tất cả các liên kết trong navbar
+        const toggleBtn = document.querySelector('#menu-btn');
+        const navbar = document.querySelector('.navbar');
+        const navbarLinks = document.querySelectorAll('.navbar a');
+
+        // Hàm để toggle navbar
+        toggleBtn.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        // Hàm để đóng navbar khi người dùng nhấn vào một liên kết trong navbar
+        navbarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+            });
+        });
+
+        // Hiển thị pop-up tự động khi trang tải
+        window.onload = function () {
+            document.getElementById('popup').style.display = 'flex';
+        };
+
+        // Đóng pop-up khi người dùng nhấn nút đóng
+        document.querySelector('.close-btn').addEventListener('click', function () {
+            document.getElementById('popup').style.display = 'none';
+        });
+
+        // Hàm để hiển thị thông báo Toast
+        function showToast(message) {
+            var toast = document.getElementById("toast");
+            toast.className = "toast-notification show";
+            toast.textContent = message;
+            setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+    </script>
+    <style>
+        .iframe {
+
+            display: block;
+            margin: auto;
+        }
+    </style>
+
+    <!-- Phần Tải trước (Preloader) -->
+    <script src="preloader.js"></script>
+
+    <!-- Phần Trang Chủ Bắt đầu -->
+    <br><br><br><br><br><br>
+
+
+    <h1 style="font-size: 3rem; text-align: left; margin-left: 5%; margin-top: 5%;" data-aos-duration="1200"
+        data-aos-delay="200" data-aos-anchor-placement="top-bottom" id="menu-title">
+        Liên hệ
+    </h1>
+
+    <br>
+
+
+
+
+
+
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; margin-top: 2%;">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31344.567311957406!2d106.782501!3d10.882211!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d89aad780e49%3A0x54542761d4c22175!2zS8O9IHTDumMgeMOhIEtodSBCIC0gxJDhuqFpIGjhu41jIFF14buRYyBnaWEgVFAuSENN!5e0!3m2!1svi!2sus!4v1742146898842!5m2!1svi!2sus"
+            width="90%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <p style="font-size: 1.5rem; text-align: left; margin: 2%; margin-left: 5%;">Vui
+        lòng nhấn nút bên dưới để liên hệ với chúng tôi!</p>
+    <hr style="color: #ffffff;margin-left: 5%; margin-right: 5%;">
+
+    <br>
+    <br>
+    <button class="contact-button" onclick="openPopup()">GỬI LIÊN HỆ</button>
+
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+    <div class="popup" id="contactPopup">
+        <h2 data-aos-duration="1200" data-aos-delay="200" data-aos-anchor-placement="top-bottom" id="menu-title">Thông
+            tin liên hệ</h2>
+        <a href="tel:1900055559" target="_blank">📞 TỔNG ĐÀI KÝ TÚC XÁ:<strong>1900 055 559</strong></a>
+        <a href="mailto:bql-ba@ktxhcm.edu.vn" target="_blank">✉️ Email: <strong>bql-ba@ktxhcm.edu.vn</strong></a>
+        <p style="font-size: 1.5rem; text-align: left; margin: 2%;">
+            ( Nhấp vào liên kết! )
+        </p>
+        <button class="close-btn" onclick="closePopup()">Đóng</button>
+    </div>
+
+    <script>
+        function openPopup() {
+            document.getElementById("contactPopup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+        function closePopup() {
+            document.getElementById("contactPopup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+
+
+    
+    <!--Review adding section ended here-->
+    <br>
+
+
+    <!-- Footer Section Starts Here -->
+
+    <!-- <div class="footercolor"> -->
+        <section class="footer" id="footer" style="background-color: #224faa ">
+            <hr> <!-- Horizontal line -->
+        
+            <!-- Parent div wrapping all footer content -->
+            <div class="footer-row">
+        
+              <!-- Child div for 'About Scruter' -->
+              <div class="footer-column">
+                <h3>LIÊN HỆ</h3>
+                <a href="https://maps.app.goo.gl/3HGk1PokpXFgaWr76" target="_blank">
+                  ĐC: Đ. Mạc Đĩnh Chi, Khu phố Tân Hòa, Dĩ An, Bình Dương, Thành phố Hồ Chí Minh</a>
+                <a href="tel:1900055559" target="_blank">ĐT: 1900.055.559</a>
+                <a href="mailto:bql-ba@ktxhcm.edu.vn" target="_blank">Email: bql-ba@ktxhcm.edu.vn</a>
+                <a id="fb-link">
+                  <i class="fa-brands fa-facebook"></i> Facebook
+                </a>
+                <ul id="fb-menu" class="dropdown-content">
+                  <li><a href="https://www.facebook.com/ktxdhqghcm" target="_blank">Trung tâm Quản lý Ký túc xá - Đại học Quốc
+                      gia Tp. Hồ Chí Minh </a></li>
+                  <li><a href="https://www.facebook.com/cumb.a.bql" target="_blank">BQL cụm nhà B.A</a></li>
+                  <li><a href="https://www.facebook.com/groups/svcmba" target="_blank">Sinh viên cụm B.A</a></li>
+                </ul>
+                <p style="margin-top: 15px;">Phát triển bởi NTH</p>
+              </div>
+        
+              <!-- Tổ chức thể đoànđoàn -->
+              <div class="footer-column">
+                <h3>TỔ CHỨC THỂ ĐOÀN</h3>
+                <a href="https://www.ktxhcm.edu.vn/cong-doan" target="_blank">Công đoàn</a>
+                <a href="https://www.ktxhcm.edu.vn/chi-doan" target="_blank">Chi đoàn</a>
+                <a href="https://www.ktxhcm.edu.vn/hoi-cuu-chien-binh" target="_blank">Hội cựu chiến binh</a>
+              </div>
+        
+              <!-- Child div for 'Quick Links' -->
+              <div class="footer-column">
+                <h3>ĐƠN VỊ TRỰC THUỘC</h3>
+                <a href="https://www.ktxhcm.edu.vn/phong-tong-hop" target="_blank">Phòng Tổng hợp</a>
+                <a href="https://www.ktxhcm.edu.vn/phong-cong-ngh-thong-tin-d-li-u" target="_blank">Phòng Công nghệ thông tin -
+                  Dữ liệu</a>
+                <a href="https://www.ktxhcm.edu.vn/phong-dich-vu-du-an" target="_blank">Phòng Dịch vụ - Dự án</a>
+                <a href="https://www.ktxhcm.edu.vn/phong-cong-tac-sinh-vien" target="_blank">Phòng Công tác Sinh viên</a>
+                <a href="https://www.ktxhcm.edu.vn/phong-ke-hoach-tai-chinh" target="_blank">Phòng Kế hoạch - Tài chính</a>
+                <a href="https://www.ktxhcm.edu.vn/phong-quan-tri-thiet-bi" target="_blank">Phòng Quản trị - Thiết bị</a>
+                <a href="https://www.ktxhcm.edu.vn/tram-y-te" target="_blank">Trạm y tế</a>
+        
+              </div>
+        
+              <!-- Child div for 'Danh mục' -->
+              <div class="footer-column">
+                <h3>ĐƠN VỊ VẬN HÀNH</h3>
+                <a href="https://www.ktxhcm.edu.vn/ban-qu-n-ly-c-m-nha-ba" target="_blank">Ban quản lý Cụm nhà BA</a>
+              </div>
+        
+            </div>
+        
+        
+          </section>
+          <section class="footer1" id="footer">
+            <div class="footer-row1">
+                <div class="social-icons">
+                    <p>Theo dõi chúng tôi trên:</p>
+                    <a href="https://www.facebook.com/cumb.a.bql" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+                <div class="footer-column1">
+                    <p>Bản quyền ©2025 <i style="color: #000f83;">Ban quản lý Cụm nhà BA.</i></p>
+                    <p>Thiết kế và xây dựng bởi <i style="color: #000f83;">Ban quản lý Cụm nhà BA.</i></p>
+                </div>
+            </div>
+        </section>
+    <!-- </div> -->
+
+    <!-- Footer Section Ends Here -->
+
+    <!-- JavaScript File -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animate the search form
+            gsap.from(".search-form", { opacity: 0, x: -100, duration: 1, ease: "power2.out" });
+
+            // Animate the cart container
+            gsap.from(".cart-items-container", { opacity: 0, y: 100, duration: 1.5, ease: "power2.out" });
+
+            // Animate the 'My Order' container
+            gsap.from(".my-order-container", { opacity: 0, x: 100, duration: 1.5, ease: "power2.out" });
+
+            // Animate home section content
+            gsap.from(".home .content h3", { opacity: 0, x: -100, duration: 1.5, delay: 0.1, ease: "power2.out" });
+            gsap.from(".home .content p", { opacity: 0, x: -100, duration: 1.5, delay: 0.1, ease: "power2.out" });
+            gsap.from(".home .animated-button", { opacity: 0, x: -100, duration: 1.5, delay: 0.1, ease: "power2.out" });
+
+            // Animate buttons on hover for scaling effect
+            const buttons = document.querySelectorAll("button");
+            buttons.forEach(button => {
+                button.addEventListener('mouseover', () => {
+                    gsap.to(button, { scale: 1.1, duration: 0.2 });
+                });
+                button.addEventListener('mouseout', () => {
+                    gsap.to(button, { scale: 1, duration: 0.2 });
+                });
+            });
+
+        });
+        document.getElementById('learnMoreBtn').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default anchor behavior
+            var moreContent = document.getElementById('moreContent');
+            if (moreContent.style.display === "none") {
+                moreContent.style.display = "block";
+                this.textContent = "Show Less"; // Change button text
+            } else {
+                moreContent.style.display = "none";
+                this.textContent = "Learn More"; // Revert button text
+            }
+        });
+
+    </script>
+
+
+    <script src="./darkMode.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <div class="gtranslate_wrapper"></div>
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+</body>
+
+</html>

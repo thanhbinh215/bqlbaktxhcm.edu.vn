@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Két Nước</title>
+    <link rel="icon" href="https://sv.ktxhcm.edu.vn/assets/img/logo.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #0f2654, #433bdf);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 80vw;
+            margin: auto;
+        }
+        .product-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            max-width: 100%;
+            display: flex;
+            align-items: center;
+            border: 4px solid #ff7e5f;
+        }
+        .product-info {
+            width: 100%;
+            padding-right: 20px;
+        }
+        .product-title {
+            font-size: clamp(1.5rem, 2.5vw, 2.8rem);
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .product-description {
+            color: #555;
+            font-size: clamp(1rem, 1.5vw, 1.8rem);
+            line-height: 1.6;
+        }
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .product-image {
+            width: 100%;
+            border-radius: 12px;
+            transition: opacity 0.4s ease-in-out;
+        }
+        .image-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+        }
+        .image-wrapper:hover .image-hover {
+            opacity: 1;
+        }
+        .image-wrapper:hover .image-default {
+            opacity: 0;
+        }
+        .active-hover {
+            opacity: 1 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-container">
+        <div class="product-info">
+            <h1 class="product-title">Két Nước</h1>
+            <p class="product-description">• Bộ phận chứa nước để xả trong bồn cầu. </p>
+            <p class="product-description">• Cơ chế hoạt động bằng cần gạt. </p>
+            <p class="product-description">• Giúp điều tiết lượng nước xả, tiết kiệm nước khi sử dụng. </p>
+        </div>
+        <div class="image-wrapper">
+            <img src="/images/ketNuoc1.png" alt="Sản phẩm" class="product-image image-default">
+            <img src="/images/ketNuoc2.png" alt="Sản phẩm khi hover" class="product-image image-hover">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const imageDefault = document.querySelector(".image-default");
+            const imageHover = document.querySelector(".image-hover");
+
+            setInterval(() => {
+                // Chuyển sang ảnh hover
+                imageHover.classList.add("active-hover");
+                imageDefault.style.opacity = "0";
+
+                // Sau 2 giây, quay lại ảnh ban đầu
+                setTimeout(() => {
+                    imageHover.classList.remove("active-hover");
+                    imageDefault.style.opacity = "1";
+                }, 2000);
+            }, 10000);
+        });
+    </script>
+    <script>
+        if (window.location.pathname.endsWith(".html")) {
+          history.replaceState(null, "", window.location.pathname.replace(".html", ""));
+        }
+      </script>
+</body>
+</html>

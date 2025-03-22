@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kí Túc Xá Đại Học Quốc Gia HCM</title>
+  <link rel="stylesheet" href="preloaderStyle.css">
+  <link rel="icon" href="https://sv.ktxhcm.edu.vn/assets/img/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- CSS Tùy chỉnh -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+
+
+  <style>
+    /* Các kiểu dáng cho vòng tròn */
+    .circle {
+      height: 24px;
+      width: 24px;
+      border-radius: 24px;
+      background-color: black;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 99999999;
+      /* Luôn nằm trên cùng của các phần tử */
+    }
+  </style>
+  <style>
+    .social-icons a {
+      text-decoration: none;
+      color: #333;
+      /* Màu mặc định cho các biểu tượng */
+      font-size: 26px;
+      transition: color 0.2s ease-in-out;
+      /* Chuyển đổi nhanh và sắc nét hơn */
+    }
+
+    .social-icons a:hover .fa-linkedin {
+      color: #0A66C2;
+      /* Màu xanh sáng hơn của LinkedIn */
+    }
+
+    .social-icons a:hover .fa-facebook {
+      color: #1877F2;
+      /* Màu xanh sáng hơn của Facebook */
+    }
+
+    .social-icons a:hover .fa-x-twitter {
+      color: #1DA1F2;
+      /* Màu xanh sáng của X (Twitter) */
+    }
+
+    .social-icons a:hover .fa-instagram {
+      color: #E4405F;
+      /* Màu hồng sáng hơn của Instagram */
+    }
+
+    .social-icons a:hover .fa-pinterest {
+      color: #E60023;
+      /* Màu đỏ sáng hơn của Pinterest */
+    }
+  </style>
+
+  <style>
+    /*màu backgound*/
+    .dropdown-content {
+      position: absolute;
+      margin-top: -1%;
+      height: 130px;
+      background: rgba(0, 57, 150, 0.5);
+      /* Nền trong suốt nhẹ */
+      backdrop-filter: blur(2px);
+      /* Hiệu ứng mờ nền */
+      -webkit-backdrop-filter: blur(10px);
+      /* Hỗ trợ Safari */
+      border-radius: 12px;
+      /* Bo góc mềm mại */
+
+      /* Viền 3 lớp hòa quyện */
+      box-shadow:
+        0 0 10px rgba(195, 226, 116, 0.6),
+        /* Lớp ngoài */
+        0 0 10px rgba(5, 5, 222, 0.4),
+        /* Lớp giữa */
+        0 0 15px rgba(255, 255, 255, 0.2);
+      /* Lớp trong cùng */
+
+      padding: 10px;
+      min-width: 200px;
+      z-index: 100;
+    }
+
+    /* Hiệu ứng khi di chuột vào */
+    .dropdown-content:hover {
+      background: rgba(2, 98, 253, 0.5);
+      box-shadow:
+        0 0 7px rgba(255, 255, 255, 0.7),
+        0 0 14px rgba(100, 100, 255, 0.5),
+        0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Kiểu chữ để đảm bảo dễ nhìn */
+    .dropdown-content a {
+      color: white;
+      /* Màu chữ trắng */
+      text-decoration: none;
+      padding: 8px 12px;
+      display: block;
+    }
+
+    /* Đổi màu khi hover */
+    .dropdown-content a:hover {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      color: rgb(9, 8, 8);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Phần tải trước -->
+  <!-- <div id="preloader">
+    <div class="wrapper">
+      <div class="box-wrap">
+        <div class="box one"></div>
+        <div class="box two"></div>
+        <div class="box three"></div>
+        <div class="box four"></div>
+        <div class="box five"></div>
+        <div class="box six"></div>
+      </div>
+    </div>
+  </div> -->
+  <script>
+    if (window.location.pathname.endsWith(".html")) {
+      history.replaceState(null, "", window.location.pathname.replace(".html", ""));
+    }
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  AOS.init({
+    duration: 1000, // Điều chỉnh thời gian hiệu ứng
+  });
+
+  document.querySelectorAll(".aos-item").forEach((el) => {
+    el.addEventListener("aos:in", () => {
+      el.style.zIndex = "1"; // Khi xuất hiện, z-index giảm xuống
+    });
+  });
+});
+
+  </script>
+  
+
+  <!-- backtotop -->
+  <script>
+    window.addEventListener("scroll", function () {
+      const backToTopButton = document.getElementById("back-to-top");
+
+      if (window.scrollY > 200) { // Khi cuộn xuống 200px thì hiện nút
+        backToTopButton.style.display = "flex";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+  </script>
+  <button id="back-to-top" onclick="scrollToTop()">
+    ↑
+  </button>
+  <script>
+    //xóa phần tử trong ô tìm kiếm
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.getElementById("flavor-filter");
+      const clearBtn = document.getElementById("clear-search");
+
+      if (!searchInput || !clearBtn) {
+        console.error("Không tìm thấy phần tử cần thiết!");
+        return;
+      }
+
+      searchInput.addEventListener("input", function () {
+        console.log("Người dùng nhập:", searchInput.value); // Debug log
+        clearBtn.style.display = searchInput.value.trim() ? "block" : "none";
+      });
+
+      clearBtn.addEventListener("click", function () {
+        console.log("Xóa nội dung ô tìm kiếm"); // Debug log
+        searchInput.value = "";
+        clearBtn.style.display = "none";
+
+        // Kích hoạt sự kiện `input` để cập nhật danh sách tìm kiếm
+        searchInput.dispatchEvent(new Event("input"));
+      });
+    });
+  </script>
+
+
+  <!-- Phần Header Bắt đầu -->
+  <header class="header">
+
+    <a href="#" class="logo">
+      <img src="https://sv.ktxhcm.edu.vn/assets/img/logo.png" alt="Logo">
+    </a>
+    <!-- Nút Toggle (Hamburger) -->
+    <div class="menu-btn" id="menu-btn">
+      <span class="fas fa-bars"></span>
+    </div>
+    <h1 class="site-title" style="white-space: nowrap;text-transform: uppercase;">Trang thông tin thiết bị và vật dụng
+      <br>ký túc xá ĐHQG-HCM
+    </h1>
+
+    <nav class="navbar">
+      <a href="index.html">Trang chủ</a>
+      <!-- <a href="about_us_page.html">Giới thiệu</a> -->
+      <a href="contact.html">Liên Hệ</a>
+    </nav>
+
+    <div style="position: relative; display: inline-block; width: 100%; max-width: 400px;">
+      <input style="margin: 0 10px;
+                    border: 2px solid black;
+                    border-radius: 5px;
+                    background-color: #fff;
+                    width: calc(100% - 10px);
+                    color: black;
+                    padding: 10px;
+                    padding-right: 35px;
+                    " type="text" id="flavor-filter" placeholder="Tìm kiếm vật dụng...">
+
+      <!-- Nút xóa -->
+      <span id="clear-search" style="position: absolute;
+      right: 10px; /* Cố định sát mép phải */
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 16px;
+      color: gray;
+      display: none;">
+        ⨷
+      </span>
+    </div>
+
+
+    <!-- Biểu tượng -->
+
+
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox">
+        <div class="slider"></div>
+      </label>
+      <span id="mode-label">Light Mode</span>
+    </div>
+
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+
+  </header>
+
+  <!-- Phần Tải trước (Preloader) -->
+  <script src="preloader.js"></script>
+
+  <!-- Phần Trang Chủ Bắt đầu -->
+  <br><br><br><br><br><br>
+  <section class="home" id="home" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+    <div class="content">
+      <h3>Dành cho sinh viên đang ở KTX</h3>
+      <p>Nếu như bạn đang gặp khó khăn.
+      </p>
+      <button class="animated-button"><a href="#menu"><span>Xem ngay!</span>!</span></a></button>
+    </div>
+  </section>
+
+
+  <!-- Container thông báo Toast -->
+  <div id="toast" class="toast-notification"></div>
+
+
+  <script>
+    // Lấy nút toggle, thanh navbar (menu), và tất cả các liên kết trong navbar
+    const toggleBtn = document.querySelector('#menu-btn');
+    const navbar = document.querySelector('.navbar');
+    const navbarLinks = document.querySelectorAll('.navbar a');
+
+    // Hàm để toggle navbar
+    toggleBtn.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+
+    // Hàm để đóng navbar khi người dùng nhấn vào một liên kết trong navbar
+    navbarLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navbar.classList.remove('active');
+      });
+    });
+
+    //Hàm để đóng navbar khi người dùng click ra ngoài navbar
+    document.addEventListener('click', function (event) {
+      if (!navbar.contains(event.target) && !toggleBtn.contains(event.target)) {
+        navbar.classList.remove('active');
+      }
+    });
+
+    // Hiển thị pop-up tự động khi trang tải
+    window.onload = function () {
+      document.getElementById('popup').style.display = 'flex';
+    };
+
+    // Đóng pop-up khi người dùng nhấn nút đóng
+    document.querySelector('.close-btn').addEventListener('click', function () {
+      document.getElementById('popup').style.display = 'none';
+    });
+
+    // Hàm để hiển thị thông báo Toast
+    function showToast(message) {
+      var toast = document.getElementById("toast");
+      toast.className = "toast-notification show";
+      toast.textContent = message;
+      setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
+    }
+
+
+  </script>
+
+  </a>
+  </div>
+  </div>
+  </section>
+
+  <section class="menu" id="menu">
+    <h1 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200" data-aos-anchor-placement="top-bottom"
+      id="menu-title">
+      Dưới đây là những gì chúng tôi có thể giúp cho bạn!
+    </h1>
+
+    <br>
+
+  </section>
+
+
+
+
+  <!-- Blogs Section Starts Here -->
+
+  <section class="blogs" id="blogs">
+
+    <h1 class="heading" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200"
+      data-aos-anchor-placement="top-bottom">Dụng cụ<span style="color: #ff9500;"> & </span> <span
+        style="color: orangered;">Thiết bị </span>
+    </h1>
+
+    <div class="blog-container">
+
+      <div class="blog" data-aos="fade-up-right" data-aos-duration="1200" data-aos-delay="200">
+        <img href="product_details/banLeCua.html" src="images/banLeCua0.jpg" alt="Blog Post 1" class="blog-image">
+        <h3>Bản lề cửa</h3>
+        <p>Bộ phận giúp cánh cửa có thể đóng linh hoạt, thường được làm từ kim loại như thép không gỉ hoặc hợp kim nhôm.
+        </p>
+        <a href="product_details/banLeCua.html" target="_blank" class="btn">Chi Tiết</a>
+      </div>
+
+      <div class="blog" data-aos="fade-up-left" data-aos-duration="1200" data-aos-delay="200">
+        <img style="display: block" src="images/boCongTacDien0.jpg" alt="Blog Post 1" class="blog-image">
+
+        <h3>Bộ công tắc điện</h3>
+        <p>Bao gồm công tắc và công tắc bóng điện, điều khiển nguồn điện trong phòng, đảm bảo an toàn và tiện lợi khi sử
+          dụng thiết bị điện.</p>
+        <a href="product_details/boCongTacDienj.html" target="_blank" class="btn">Chi Tiết</a>
+      </div>
+
+      <div class="blog" data-aos="fade-up-right" data-aos-duration="1200" data-aos-delay="200">
+        <img src="images/boGuong0.png" alt="Blog Post 1" class="blog-image">
+        <h3>Bộ gương</h3>
+        <p>Gương soi sinh viên dễ dàng vệ sinh cá nhân.</p>
+        <a href="product_details/boGuong.html" target="_blank" class="btn">Chi Tiết</a>
+      </div>
+
+      <div class="blog" data-aos="fade-up-left" data-aos-duration="1200" data-aos-delay="200">
+        <img style="display: block" src="images/bongTuyt0.jpg" alt="Blog Post 1" class="blog-image">
+        <h3>Bóng tuýt</h3>
+        <p> Đèn ống dài huỳnh quang,
+          cung cấp ánh sáng cho phòng học và sinh hoạt.</p>
+        <a href="product_details/bongTuyt.html" target="_blank" class="btn">Chi Tiết</a>
+      </div>
+
+      <div class="blog" data-aos="fade-up-right" data-aos-duration="1200" data-aos-delay="200">
+        <img src="images/bonRuaMat0.jpg" alt="Blog Post 1" class="blog-image">
+        <h3>Bồn rửa mặt</h3>
+        <p>Bồn rửa tay được làm bằng sứ, gắn trong khu vực bảo vệ sinh hoạt để rửa mặt, tay.</p>
+        <a href="product_details/bonRuaMat.html" target="_blank" class="btn">Chi Tiết</a>
+      </div>
+
+      <div class="blog" data-aos="fade-up-left" data-aos-duration="1200" data-aos-delay="200">
+        <img style="display: block" src="images/boVoiSen0.jpg" alt="Blog Post 1" class="blog-image">
+        <h3>Bộ vòi hoa sen</h3>
+        <p>Cung cấp nước phục vụ tắm rửa hàng ngày.</p>
+        <a href="product_details/boVoiHoaSen.html" target="_blank" class="btn">Chi Tiết</a>
+      </div>
+
+      <div class="blog" data-aos="fade-up-right" data-aos-duration="1200" data-aos-delay="200">
+        <img src="images/boVoiSit0.png" alt="Blog Post 1" class="blog-image">
+        <h3>Bộ vòi sịt</h3>
+        <p>Dùng để bảo vệ bồn cầu, được lắp đặt trong khu vực nhà vệ sinh.</p>
+        <a href="product_details/boVoiSit.html" target="_blank" class="btn">Chi Tiết</a>
+      </div>
+
+      <div class="blog" data-aos="fade-up-left" data-aos-duration="1200" data-aos-delay="200">
+        <img style="display: block" src="images/chotCua0.png" alt="Blog Post 1" class="blog-image">
+        <h3>Chốt cửa</h3>
+        <p>Đảm bảo an toàn và riêng tư cho sinh viên.</p>
+        <a href="product_details/chotCua.html" target="_blank" class="btn">Chi Tiết</a>
+      </div>
+
+      <div class="blog" data-aos="fade-up-right" data-aos-duration="1200" data-aos-delay="200">
+        <img src="images/denBanCong0.png" alt="Blog Post 1" class="blog-image">
+        <h3>Đèn ban công</h3>
+        <p>Đèn chiếu sáng lắp đặt ở ban công, giúp cung cấp ánh sáng vào ban đêm
+          và tạo ra không gian sinh hoạt ngoài hành lang, ban công.</p>
+        <a href="product_details/denBanCong.html" target="_blank" class="btn">Chi Tiết</a>
+      </div>
+
+      <div class="blog" data-aos="fade-up-left" data-aos-duration="1200" data-aos-delay="200">
+        <img style="display: block" src="images/giaTreoGiayVS0.png" alt="Blog Post 1" class="blog-image">
+        <h3>Giá treo giấy vệ sinh</h3>
+        <p>Dụng cụ giúp giữ cuộn giấy vệ sinh gọn gàng và tiện lợi khi sử dụng.</p>
+        <a href="product_details/giaTreoGiay.html" target="_blank" class="btn">Chi Tiết</a>
+      </div>
+
+      <div class="blog" data-aos="fade-up-right" data-aos-duration="1200" data-aos-delay="200">
+        <img src="images/giaTreoKhanTam0.jpg" alt="Blog Post 1" class="blog-image">
+        <h3>Giá treo khăn</h3>
+        <p>Thanh treo hoặc kệ nhỏ để đặt khăn mặt, khăn tắm trong nhà tắm.</p>
+        <a href="product_details/giaTreoKhan.html" target="_blank" class="btn">Chi Tiết</a>
+      </div>
+
+      <div class="blog" data-aos="fade-up-left" data-aos-duration="1200" data-aos-delay="200">
+        <img style="display: block" src="images/giuongTang0.jpg" alt="Blog Post 1" class="blog-image">
+        <h3>Giường tầng</h3>
+        <p>Loại giường có hai hoặc nhiều tầng, giúp tiết kiệm diện tích
+          và phù hợp với không gian ký túc xá.</p>
+        <a href="product_details/giuongTang.html" target="_blank" class="btn">Chi Tiết</a>
+      </div>
+
+      <div class="blog" data-aos="fade-up-right" data-aos-duration="1200" data-aos-delay="200">
+        <img style="display: block" src="images/ketNuoc0.png" alt="Blog Post 1" class="blog-image">
+        <h3>Két nước</h3>
+        <p>Bộ phận chứa nước bồn cầu, điều chỉnh lượng nước xả để bảo vệ bồn cầu.</p>
+        <a href="product_details/ketNuoc.html" target="_blank" class="btn">Chi Tiết</a>
+      </div>
+
+      <div class="blog" data-aos="fade-up-left" data-aos-duration="1200" data-aos-delay="200">
+        <img src="images/quatDaoTran0.jpeg" alt="Blog Post 1" class="blog-image">
+        <h3>Quạt đảo trần</h3>
+        <p>Được lắp đặt trên trần có khả năng xoay hướng gió, giúp làm mát đều không gian phòng.</p>
+        <a href="product_details/quatDaoTran.html" target="_blank" class="btn">Chi Tiết</a>
+      </div>
+
+
+      <div class="blog" data-aos="zoom-out-down" data-aos-duration="1200" data-aos-delay="200">
+        <img src="images/tuSat4Ngan0.jpeg" alt="Blog Post 1" class="blog-image">
+        <h3>Tủ sắt 4 ngăn</h3>
+        <p>Tủ được làm bằng sắt, chia thành 4 ngăn riêng biệt, giúp sinh viên lưu trữ đồ cá nhân
+          một cách ngay ngắn và an toàn.</p>
+        <a href="product_details/tuSat4Ngan.html" target="_blank" class="btn">Chi Tiết</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.getElementById("flavor-filter");
+      const blogs = document.querySelectorAll(".blog");
+
+      if (!searchInput) {
+        console.error("Không tìm thấy ô tìm kiếm!");
+        return;
+      }
+
+      if (!blogs.length) {
+        console.error("Không tìm thấy bài viết nào!");
+        return;
+      }
+
+      console.log("Script đã load, có", blogs.length, "bài viết!");
+
+      searchInput.addEventListener("input", function () {
+        const searchText = searchInput.value.toLowerCase();
+        console.log("Từ khóa tìm kiếm:", searchText);
+
+        let hasVisibleBlog = false;
+
+        blogs.forEach((blog) => {
+          const title = blog.querySelector("h3")?.textContent.toLowerCase();
+
+          console.log("Kiểm tra bài viết:", title);
+
+          if (title.includes(searchText)) {
+            blog.classList.remove("hidden");
+            blog.style.opacity = "1"; // Đảm bảo hiển thị đúng
+            blog.style.transform = "none"; // Reset vị trí
+            hasVisibleBlog = true;
+            console.log("Hiển thị:", title);
+          } else {
+            blog.classList.add("hidden");
+            blog.style.opacity = "0"; // Ẩn hoàn toàn
+            console.log("Ẩn:", title);
+          }
+        });
+
+        // Nếu có bài viết nào được hiển thị, làm mới AOS
+        if (hasVisibleBlog) {
+          setTimeout(() => {
+            AOS.refreshHard();
+          }, 2);
+        }
+      });
+    });
+
+  </script>
+
+
+  <br>
+  <br>
+
+
+  <!--Review adding section ended here-->
+  <br>
+
+
+  <!-- Footer Section Starts Here -->
+
+  <!-- <div class="footercolor"> -->
+  <section class="footer" id="footer" style="background-color: #224faa ">
+    <hr> <!-- Horizontal line -->
+
+    <!-- Parent div wrapping all footer content -->
+    <div class="footer-row">
+
+      <!-- Child div for 'About Scruter' -->
+      <div class="footer-column">
+        <h3>LIÊN HỆ</h3>
+        <a href="https://maps.app.goo.gl/3HGk1PokpXFgaWr76" target="_blank">
+          ĐC: Đ. Mạc Đĩnh Chi, Khu phố Tân Hòa, Dĩ An, Bình Dương, Thành phố Hồ Chí Minh</a>
+        <a href="tel:1900055559" target="_blank">ĐT: 1900.055.559</a>
+        <a href="mailto:bql-ba@ktxhcm.edu.vn" target="_blank">Email: bql-ba@ktxhcm.edu.vn</a>
+        <a  id="fb-link">
+          <i class="fa-brands fa-facebook"></i> Facebook
+        </a>
+        <ul id="fb-menu" class="dropdown-content">
+          <li><a href="https://www.facebook.com/ktxdhqghcm" target="_blank">Trung tâm Quản lý Ký túc xá - Đại học Quốc
+              gia Tp. Hồ Chí Minh </a></li>
+          <li><a href="https://www.facebook.com/cumb.a.bql" target="_blank">BQL cụm nhà B.A</a></li>
+          <li><a href="https://www.facebook.com/groups/svcmba" target="_blank">Sinh viên cụm B.A</a></li>
+        </ul>
+        <p style="margin-top: 15px;">Phát triển bởi NTH</p>
+      </div>
+
+      <!-- Tổ chức thể đoànđoàn -->
+      <div class="footer-column">
+        <h3>TỔ CHỨC THỂ ĐOÀN</h3>
+        <a href="https://www.ktxhcm.edu.vn/cong-doan" target="_blank">Công đoàn</a>
+        <a href="https://www.ktxhcm.edu.vn/chi-doan" target="_blank">Chi đoàn</a>
+        <a href="https://www.ktxhcm.edu.vn/hoi-cuu-chien-binh" target="_blank">Hội cựu chiến binh</a>
+      </div>
+
+      <!-- Child div for 'Quick Links' -->
+      <div class="footer-column">
+        <h3>ĐƠN VỊ TRỰC THUỘC</h3>
+        <a href="https://www.ktxhcm.edu.vn/phong-tong-hop" target="_blank">Phòng Tổng hợp</a>
+        <a href="https://www.ktxhcm.edu.vn/phong-cong-ngh-thong-tin-d-li-u" target="_blank">Phòng Công nghệ thông tin -
+          Dữ liệu</a>
+        <a href="https://www.ktxhcm.edu.vn/phong-dich-vu-du-an" target="_blank">Phòng Dịch vụ - Dự án</a>
+        <a href="https://www.ktxhcm.edu.vn/phong-cong-tac-sinh-vien" target="_blank">Phòng Công tác Sinh viên</a>
+        <a href="https://www.ktxhcm.edu.vn/phong-ke-hoach-tai-chinh" target="_blank">Phòng Kế hoạch - Tài chính</a>
+        <a href="https://www.ktxhcm.edu.vn/phong-quan-tri-thiet-bi" target="_blank">Phòng Quản trị - Thiết bị</a>
+        <a href="https://www.ktxhcm.edu.vn/tram-y-te" target="_blank">Trạm y tế</a>
+
+      </div>
+
+      <!-- Child div for 'Danh mục' -->
+      <div class="footer-column">
+        <h3>ĐƠN VỊ VẬN HÀNH</h3>
+        <a href="https://www.ktxhcm.edu.vn/ban-qu-n-ly-c-m-nha-ba" target="_blank">Ban quản lý Cụm nhà BA</a>
+      </div>
+
+    </div>
+
+
+  </section>
+  <section class="footer1" id="footer">
+    <div class="footer-row1">
+        <div class="social-icons">
+            <p>Theo dõi chúng tôi trên:</p>
+            <a href="https://www.facebook.com/cumb.a.bql" target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+        </div>
+        <div class="footer-column1">
+            <p>Bản quyền ©2025 <i style="color: #000f83;">Ban quản lý Cụm nhà BA.</i></p>
+            <p>Thiết kế và xây dựng bởi <i style="color: #000f83;">Ban quản lý Cụm nhà BA.</i></p>
+        </div>
+    </div>
+</section>
+
+  <!-- Footer Section Ends Here -->
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+
+  <script>
+    //list fb
+    document.addEventListener("DOMContentLoaded", function () {
+      let fbLink = document.getElementById("fb-link");
+      let menu = document.getElementById("fb-menu");
+
+      // Ẩn menu khi tải trang
+      menu.style.display = "none";
+
+      // Toggle hiển thị menu khi click vào nút Facebook
+      fbLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation(); // Ngăn chặn sự kiện click lan ra document
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+      });
+
+      // Ẩn menu khi click ra ngoài
+      document.addEventListener("click", function (event) {
+        if (!fbLink.contains(event.target) && !menu.contains(event.target)) {
+          menu.style.display = "none";
+        }
+      });
+      // Ẩn menu khi click vào bất kỳ link nào trong menu
+      links.forEach(link => {
+        link.addEventListener("click", function () {
+          menu.style.display = "none";
+        });
+      });
+    });
+
+
+
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Animate the search form
+      gsap.from(".search-form", { opacity: 0, x: -100, duration: 1, ease: "power2.out" });
+
+      // Animate the cart container
+      gsap.from(".cart-items-container", { opacity: 0, y: 100, duration: 1.5, ease: "power2.out" });
+
+      // Animate the 'My Order' container
+      gsap.from(".my-order-container", { opacity: 0, x: 100, duration: 1.5, ease: "power2.out" });
+
+      // Animate home section content
+      gsap.from(".home .content h3", { opacity: 0, x: -100, duration: 1.5, delay: 0.1, ease: "power2.out" });
+      gsap.from(".home .content p", { opacity: 0, x: -100, duration: 1.5, delay: 0.1, ease: "power2.out" });
+      gsap.from(".home .animated-button", { opacity: 0, x: -100, duration: 1.5, delay: 0.1, ease: "power2.out" });
+
+      // Animate buttons on hover for scaling effect
+      const buttons = document.querySelectorAll("button");
+      buttons.forEach(button => {
+        button.addEventListener('mouseover', () => {
+          gsap.to(button, { scale: 1.1, duration: 0.2 });
+        });
+        button.addEventListener('mouseout', () => {
+          gsap.to(button, { scale: 1, duration: 0.2 });
+        });
+      });
+
+    });
+    document.getElementById('learnMoreBtn').addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent default anchor behavior
+      var moreContent = document.getElementById('moreContent');
+      if (moreContent.style.display === "none") {
+        moreContent.style.display = "block";
+        this.textContent = "Show Less"; // Change button text
+      } else {
+        moreContent.style.display = "none";
+        this.textContent = "Learn More"; // Revert button text
+      }
+    });
+
+  </script>
+
+
+  <script src="./darkMode.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <!-- <script>
+    // Coordinates for the cursor
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    // Colors for the circles
+    const colors = [
+      "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+      "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+      "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+      "#680060", "#60005f", "#48005f", "#3d005e"
+    ];
+
+    // Assign colors and initial position to each circle
+    circles.forEach(function (circle, index) {
+      circle.x = 0;
+      circle.y = 0;
+      circle.style.backgroundColor = colors[index % colors.length];
+    });
+
+
+    // Animation function to move the circles
+    function animateCircles() {
+      let x = coords.x;
+      let y = coords.y;
+
+      circles.forEach(function (circle, index) {
+        // Update the position and scale of each circle
+        circle.style.left = x - 12 + "px";
+        circle.style.top = y - 12 + "px";
+        circle.style.scale = (circles.length - index) / circles.length;
+
+        circle.x = x;
+        circle.y = y;
+
+        // Get the next circle in the sequence
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+      });
+
+      // Repeat the animation
+      requestAnimationFrame(animateCircles);
+    }
+
+    // Start the animation
+    animateCircles();
+  </script> -->
+  <div class="gtranslate_wrapper"></div>
+  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+</body>
+
+</html>
