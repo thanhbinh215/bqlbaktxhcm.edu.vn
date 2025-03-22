@@ -567,15 +567,11 @@ button:hover {
 }
 @media (max-width: 600px) {
   .home .content h3 {
-    font-size: 30px; /* Giảm khi màn hình nhỏ hơn 768px */
+    font-size: 10px; /* Giảm khi màn hình nhỏ hơn 768px */
   }
 }
 
-@media (max-width: 300px) {
-  .home .content h3 {
-    font-size: 24px; /* Giảm khi màn hình nhỏ hơn 480px */
-  }
-}
+
 
 .home .content h3 {
   font-size: 50px;
