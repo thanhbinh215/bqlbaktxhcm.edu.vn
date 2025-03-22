@@ -1351,13 +1351,10 @@ button:hover {
 
 /* Căn giữa phần bản quyền */
 .footer-column1 {
-  position: absolute;
-  left: 60%;
-  margin-bottom: 5px;
-  transform: translateX(-40%);
-  text-align: center;
-  font-size: 1.5rem;
- 
+  position: static; /* Không dùng absolute */
+  font-size: 1.2rem; /* Giảm kích thước font */
+  max-width: 100%; /* Giới hạn chiều rộng */
+  word-wrap: break-word; /* Ngăn chữ tràn */
 }
 
 /* Media Queries */
