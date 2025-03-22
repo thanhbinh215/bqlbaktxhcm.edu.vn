@@ -567,8 +567,9 @@ button:hover {
 }
 @media (max-width: 768px) {
   .home .content {
-    max-width: 30rem;
-    text-align: center;
+    max-width: 20rem;
+    
+    left: 100px;
   }
 }
 
