@@ -1429,7 +1429,9 @@ button:hover {
     background-position: left;
     justify-content: center;
     text-align: center;
+    margin-left: 50px;
   }
+  
 
   .home .content h3 {
     font-size: 2rem;
