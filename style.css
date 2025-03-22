@@ -571,7 +571,7 @@ button:hover {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 300px) {
   .home .content h3 {
     font-size: 24px; /* Giảm khi màn hình nhỏ hơn 480px */
   }
