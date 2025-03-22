@@ -1431,7 +1431,14 @@ button:hover {
     text-align: center;
    
   }
-  
+  .home .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Căn giữa theo chiều dọc */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    text-align: center; /* Căn giữa nội dung text */
+    height: 100vh; /* Chiều cao toàn màn hình */
+  }
 
   .home .content h3 {
     font-size: 4rem;
