@@ -1305,27 +1305,26 @@ button:hover {
   /* Subtle hover effect */
 }
 
-
 /* ===== Footer Styling ===== */
 .footer1 {
-  padding: 15px 20px; /* Tăng padding cho cân đối */
-  background: rgb(227, 227, 227); /* Màu nền */
+  padding: 15px 20px;
+  background: rgb(227, 227, 227);
   color: rgb(0, 0, 0);
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   position: relative;
-  text-align: center; /* Căn giữa nội dung */
 }
 
+/* Dòng chứa Social & Bản quyền */
 .footer-row1 {
   display: flex;
   align-items: center;
-  justify-content: center; /* Căn giữa toàn bộ nội dung */
+  justify-content: space-between; /* Social bên trái, Bản quyền bên phải */
   width: 100%;
-  flex-wrap: wrap; /* Đảm bảo không bị tràn */
-  gap: 10px; /* Khoảng cách giữa các phần */
+  max-width: 1200px; /* Giới hạn chiều rộng */
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
 /* ===== Social Icons (Facebook, v.v) ===== */
@@ -1333,7 +1332,7 @@ button:hover {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.2rem; /* Giảm size để tránh tràn */
+  font-size: 1.2rem;
 }
 
 .social-icons p {
@@ -1346,40 +1345,56 @@ button:hover {
 }
 
 .social-icons a:hover {
-  color: #000f83; /* Hover xanh đậm */
+  color: #000f83;
 }
 
 /* ===== Bản Quyền - Footer Column ===== */
 .footer-column1 {
-  font-size: 1rem; /* Giảm size chữ cho gọn */
-  max-width: 90%; /* Đảm bảo không bị tràn */
+  font-size: 1rem;
+  text-align: right; /* Căn phải */
+  max-width: 50%;
   word-wrap: break-word;
-  text-align: center; /* Căn giữa chữ */
-  line-height: 1.4; /* Tăng khoảng cách dòng */
+  line-height: 1.4;
 }
 
 /* ===== Responsive Design ===== */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .footer-row1 {
-    flex-direction: column; /* Xếp chồng các phần tử */
-  }
-
-  .footer-column1 {
-    font-size: 0.9rem; /* Nhỏ hơn cho điện thoại */
-    padding: 5px 10px;
+    flex-direction: column; /* Xếp dọc trên màn hình nhỏ */
+    align-items: center;
+    text-align: center;
   }
 
   .social-icons {
-    font-size: 1rem; /* Giảm kích thước icon */
+    justify-content: center;
   }
-}
 
-@media (max-width: 400px) {
   .footer-column1 {
-    font-size: 0.8rem;
+    text-align: center; /* Căn giữa trên mobile */
+    max-width: 100%;
   }
 }
 
+/* Media Queries */
+@media (max-width: 400px) {
+  html {
+    font-size: 30%;
+  }
+
+  .header {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  #menu-btn {
+    display: inline-block;
+  }
+
+  .site-title {
+    margin-left: 0.1rem;
+    font-size: 0.1 rem;
+  }
 
   .navbar {
     position: absolute;
