@@ -565,7 +565,7 @@ button:hover {
   max-width: 60rem;
  
 }
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .home .content h3 {
     font-size: 30px; /* Giảm khi màn hình nhỏ hơn 768px */
   }
