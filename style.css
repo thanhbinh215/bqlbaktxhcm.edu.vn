@@ -581,6 +581,7 @@ button:hover {
 
 .home .content h3 {
   font-size: 50px;
+  margin-left: 30px;
   text-transform: uppercase;
   /* color: var(--text-color); */
   color: #fff;
@@ -593,6 +594,7 @@ button:hover {
   color: #fff;
   padding: 1rem 0;
   line-height: 1.8;
+  margin-left: 30px;
 }
 
 /* About Styles */
