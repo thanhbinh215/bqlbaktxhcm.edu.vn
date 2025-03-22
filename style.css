@@ -567,7 +567,7 @@ button:hover {
 }
 
 .home .content h3 {
-  font-size: 50px;
+  font-size: 45px;
   text-transform: uppercase;
   /* color: var(--text-color); */
   color: #fff;
@@ -1432,7 +1432,7 @@ button:hover {
   }
 
   .home .content h3 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .home .content p {
