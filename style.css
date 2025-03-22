@@ -1378,7 +1378,7 @@ button:hover {
 }
 
 /* Media Queries */
-@media (max-width: 400px) {
+@media (max-width: 768px) {
   html {
     font-size: 30%;
   }
@@ -1388,7 +1388,7 @@ button:hover {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 768px) {
   #menu-btn {
     display: inline-block;
   }
