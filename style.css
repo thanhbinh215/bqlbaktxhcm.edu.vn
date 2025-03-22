@@ -565,7 +565,7 @@ button:hover {
   max-width: 60rem;
  
 }
-@media (max-width: 750px) {
+@media (max-width: 700px) {
   .home .content h3{
     text-align: center;
     
