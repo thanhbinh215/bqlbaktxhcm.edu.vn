@@ -445,20 +445,6 @@ button:hover {
 .header .icons div:hover {
   color: var(--text-color);
 }
-/* moi up */
-@media screen and (max-width: 768px) {
-  header {
-    position: relative;
-    top: 0;
-    padding: 10px;
-  }
-
-  .menu {
-    display: flex;
-    flex-direction: column; /* Sắp xếp menu theo chiều dọc */
-  }
-}
-
 
 .menu-btn {
   display: none;
@@ -1324,9 +1310,7 @@ button:hover {
   padding: 10px;
   background: rgb(227, 227, 227); /* Màu nền xanh có độ mờ */
   color: rgb(0, 0, 0);
-  max-width: 100%;
-  overflow: hidden;
-  word-wrap: break-word;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1346,6 +1330,7 @@ button:hover {
 .social-icons {
   display: flex;
   align-items: center; /* Căn giữa theo chiều dọc */
+  gap: 20px;
   margin-left: 20px;
   font-size: 1.5rem;
   
@@ -1372,11 +1357,11 @@ button:hover {
   transform: translateX(-40%);
   text-align: center;
   font-size: 1.5rem;
-  
+  margin-left: 100px;
 }
 
 /* Media Queries */
-@media (max-width: 400px) {
+@media (max-width: 730px) {
   html {
     font-size: 30%;
   }
@@ -1386,7 +1371,7 @@ button:hover {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 730) {
   #menu-btn {
     display: inline-block;
   }
@@ -1432,12 +1417,10 @@ button:hover {
 
   .home .content h3 {
     font-size: 4.5rem;
-    text-align: center;
   }
 
   .home .content p {
     font-size: 1.2rem;
-    text-align: center;
   }
 }
 
