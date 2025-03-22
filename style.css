@@ -563,6 +563,7 @@ button:hover {
 
 .home .content {
   max-width: 60rem;
+  left: 50px;
 }
 
 .home .content h3 {
