@@ -569,7 +569,7 @@ button:hover {
   .home .content {
     max-width: 20rem;
     
-    left: 100px;
+    margin-left: 80px;
   }
 }
 
