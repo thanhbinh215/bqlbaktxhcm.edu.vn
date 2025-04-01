@@ -258,6 +258,14 @@ button:hover {
     padding: 0.5rem;
     flex-wrap: nowrap;
   }
+  .header .navbar a:hover {
+    width: 100%;
+    margin-top: 5px;
+  }
+  .header .navbar a {
+    width: 100%;
+    margin-top: 5px;
+  }
 
   .header .logo img {
     height: 3.5rem;
@@ -1134,9 +1142,7 @@ button:hover {
     font-size: 30%;
   }
 
-  .header {
-    padding: 1rem 1.5rem;
-  }
+  
 }
 
 @media (max-width: 500px) {
@@ -1144,37 +1150,7 @@ button:hover {
     display: inline-block;
   }
 
-  .site-title {
-    margin-left: 0.1rem;
-    font-size: 0.1 rem;
-  }
-
-  .navbar {
-    position: absolute;
-    top: calc(100% );
-    /* Adjusted top position */
-    right: -100%;
-    background-color: var(--background-color);
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding-top: 2rem;
-    /* Added padding top for better spacing */
-    transition: right 0.3s ease;
-  }
-
-  .header.navbar.active {
-    right: 0;
-  }
-
-  .header .navbar a {
-    color: #000000;
-    display: block;
-    margin: 1rem;
-    padding: 1rem;
-    font-size: 2rem;
-  }
+ 
 
   
   .home {
@@ -1568,6 +1544,7 @@ body {
 .theme-switch-wrapper {
   display: flex;
   align-items: center;
+  margin-left: 5px;
 }
 
 #mode-label {
@@ -1580,6 +1557,7 @@ body {
   display: inline-block;
   width: 50px;
   height: 24px;
+
 }
 
 .theme-switch input {
