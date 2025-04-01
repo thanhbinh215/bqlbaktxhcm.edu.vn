@@ -285,187 +285,100 @@ button:hover {
 }
 
 
-
-/* .auth-btn {
-  background: linear-gradient(to right, #ff4e50, #fc913a);
-  color: var(--text-color);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 500;
-  padding: 1rem 1.5rem;
-  border-radius: 50px;
-} */
-
-/* Header Styles */
-/* .header {
-  background-color: var(--background-color);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem 7%;
-  border-bottom: var(--border);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-} */
-.header .logo img {
-  height: 6rem;
-}
-
-.header .navbar {
-  display: flex;
-  align-items: center;
-  transition: max-height 0.3s ease;
-}
-
-.header .navbar a {
-  margin: 0 1rem;
-  font-size: 1.6rem;
-  color: var(--text-color);
-}
-
-.header .navbar a:hover {
-  color: rgb(51, 168, 235) !important;
-}
-
-.header .icons {
-  display: flex;
-  align-items: center;
-}
-
-.header .icons div {
-  background-color: var(--background-color);
-  cursor: pointer;
-  font-size: 2.5rem;
-  margin-left: 2rem;
-}
-
-.header .icons div:hover {
-  color: var(--text-color);
-
-
-
-  /* Navbar on Small Screens */
-  @media (max-width: 768px) {
-    .header .navbar {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background-color: var(--background-color) !important;
-      flex-direction: column;
-      align-items: flex-start;
-      max-height: 0;
-      overflow: hidden;
-      padding-top: 0rem !important;
-    }
-
-    .header .navbar a {
-      padding: 0.2rem !important;
-      width: 100%;
-      color: var(--text-color) !important;
-      font-size: medium !important;
-      text-align: center;
-      margin: 0;
-    }
-  }
-}
-
-
 .header {
   background-color: var(--background-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem !important;
-  border-bottom: var(--border);
+  flex-wrap: nowrap; /* Không xuống dòng */
+  padding: 1rem;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   border-bottom: 2px solid #f83a0a;
-  /* Màu cam */
-  padding-bottom: 10px;
-}
-@media (max-width: 768px) {
-  .theme-switch-wrapper {
-    transform: scale(0.8); /* Thu nhỏ */
-    margin-left: 10px;
-  }
-}
-
-@media (max-width: 768px) {
-  .search-container {
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Căn giữa theo chiều ngang */
-    margin-top: 10px; /* Tạo khoảng cách */
-  }
+  overflow: hidden; /* Ngăn không cho phần tử bị tràn */
+  min-height: 70px; /* Đảm bảo header không bị co quá mức */
 }
 
 .header .logo img {
-  height: 6rem;
+  height: 5rem; /* Giảm chiều cao logo để tiết kiệm không gian */
+  flex-shrink: 0; /* Không cho logo thu nhỏ quá nhiều */
+}
+
+.header .site-title {
+  font-size: 2rem;
+  white-space: nowrap; /* Không cho chữ xuống dòng */
+  flex-grow: 1; /* Đảm bảo chiếm phần lớn không gian nhưng vẫn co lại */
+  text-align: left;
 }
 
 .header .navbar {
   display: flex;
   align-items: center;
-  transition: max-height 0.3s ease;
-
+  gap: 10px;
+  flex-shrink: 1; /* Cho phép menu thu nhỏ nhưng không bị mất */
+  transition: all 0.3s ease;
 }
 
 .header .navbar a {
-  margin: 0 1rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: var(--text-color);
   white-space: nowrap;
-  /* Prevent text from breaking into two lines */
-}
-
-.header .navbar a:hover {
-  color: rgb(51, 168, 235) !important;
-}
-
-.header .icons {
-  display: flex;
-  align-items: center;
-}
-
-.header .icons div {
-  background-color: var(--background-color);
-  cursor: pointer;
-  font-size: 2.5rem;
-  margin-left: 2rem;
-}
-
-.header .icons div:hover {
-  color: var(--text-color);
+  text-align: center;
+  padding: 5px 10px;
+  flex-shrink: 1;
 }
 
 .menu-btn {
-  display: none;
+  display: none; /* Mặc định ẩn */
   cursor: pointer;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--text-color);
-  margin-left: 0rem;
+  margin-left: 10px;
+  flex-shrink: 0;
 }
 
-/* Navbar on Small Screens */
+/* Responsive */
+@media (max-width: 1024px) {
+  .header {
+    padding: 0.5rem; /* Giảm padding để tiết kiệm không gian */
+  }
+
+  .header .site-title {
+    font-size: 1.6rem; /* Thu nhỏ chữ tiêu đề */
+  }
+
+  .header .navbar a {
+    font-size: 1.2rem;
+    padding: 3px 8px; /* Giảm padding */
+  }
+}
+
 @media (max-width: 768px) {
-  .header .menu-btn {
-    display: block; /* Hiện icon menu */
+  .header {
+    flex-wrap: nowrap; /* Không xuống dòng */
+    justify-content: space-between; /* Căn đều hai bên */
+    padding: 0.3rem;
+    min-height: 60px; /* Giữ header hiển thị đầy đủ */
+  }
+
+  .header .logo img {
+    height: 4rem; /* Giảm kích thước logo */
+  }
+
+  .header .site-title {
+    font-size: 1.4rem; /* Giảm cỡ chữ */
   }
 
   .header .navbar {
+    display: none; /* Ẩn menu trên mobile */
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: var(--background-color);
+    background: var(--background-color);
     flex-direction: column;
     align-items: center;
     padding: 0;
@@ -476,28 +389,22 @@ button:hover {
   }
 
   .header .navbar a {
-    padding: 0.8rem 0;
-    width: 100%;
-    color: black; /* Màu chữ ban đầu là đen */
-    font-size: 1.2rem;
-    text-align: center;
-    transition: background 0.3s ease, color 0.3s ease;
+    font-size: 1rem;
   }
 
-  /* Hiệu ứng khi hover */
-  .header .navbar a:hover {
-    background: #e3e3e3; /* Màu nền nổi bật */
-    color: rgb(0, 0, 0); /* Chữ đổi thành trắng */
-    font-weight: bold; /* Chữ đậm hơn */
+  .menu-btn {
+    display: block; /* Hiển thị nút menu */
   }
 
-  /* Hiệu ứng khi menu mở */
+  /* Khi mở menu */
   .header .navbar.active {
     max-height: 300px;
     opacity: 1;
     padding: 1rem 0;
+    display: flex;
   }
 }
+
 
 
 /* My Order Styles */
@@ -1809,14 +1716,6 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Header */
-/* header {
-  background-color: var(--header-bg);
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
 
 /* Toggle Switch */
 .theme-switch-wrapper {
