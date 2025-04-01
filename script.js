@@ -498,4 +498,3 @@ document.getElementById("flavor-filterr").addEventListener("input", function () 
     });
     
 });
-

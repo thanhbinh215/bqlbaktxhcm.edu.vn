@@ -145,15 +145,14 @@ button:hover {
   color: var(--text-color);
 }
 
-
-
+/* Header */
 .header {
   background-color: var(--background-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100vw; /* Full chiều rộng */
-  height: auto; /* Tự động điều chỉnh theo nội dung */
+  width: 100vw;
+  height: auto;
   padding: 0.8rem 1rem;
   position: fixed;
   top: 0;
@@ -161,71 +160,52 @@ button:hover {
   right: 0;
   z-index: 1000;
   border-bottom: 2px solid #f83a0a;
-  overflow: hidden; /* Ngăn tràn nội dung */
-  white-space: nowrap; /* Chống xuống dòng */
 }
 
+/* Logo */
 .header .logo img {
-  height: 5rem; /* Giảm kích thước ảnh trên mobile */
-  max-height: 10vh; /* Không vượt quá 10% chiều cao màn hình */
+  height: 5rem;
+  max-height: 10vh;
 }
 
-.header .navbar {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap; /* Không cho xuống dòng */
-  overflow: hidden;
-}
-
-.header .navbar a {
-  margin: 0 1rem;
-  font-size: 1.4rem;
-  color: var(--text-color);
-  white-space: nowrap;
-}
-
-.header .navbar a:hover {
-  color: rgb(51, 168, 235) !important;
-}
-
-.site-title {
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  text-align: center;
-  flex-shrink: 1; /* Thu nhỏ nếu cần thiết */
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
+/* Menu 3 gạch */
 .menu-btn {
   display: none;
   cursor: pointer;
   font-size: 2.2rem;
   color: var(--text-color);
+  background: none;
+  border: none;
+  padding: 5px;
 }
 
-.theme-switch-wrapper {
-  flex-shrink: 1;
+/* Navbar */
+.header .navbar {
   display: flex;
   align-items: center;
+  flex-wrap: nowrap;
 }
 
+/* Ẩn menu trên mobile */
 @media (max-width: 1024px) {
-  .header {
-    padding: 0.5rem 1rem;
+  .header .navbar {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 999;
   }
 
-  .header .logo img {
-    height: 4rem;
-  }
-
-  .site-title {
-    font-size: 1.5rem;
-  }
-
-  .header .navbar a {
-    font-size: 1.2rem;
-    margin: 0 0.5rem;
+  .header .navbar.active {
+    display: flex;
   }
 
   .menu-btn {
@@ -233,6 +213,43 @@ button:hover {
   }
 }
 
+/* Link trong navbar */
+.header .navbar a {
+  font-size: 1.4rem;
+  color: #333;
+  padding: 10px 0;
+  text-decoration: none;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.header .navbar a:hover {
+  background: #f83a0a;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* Site title */
+.site-title {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  text-align: center;
+  flex-shrink: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Chế độ tối/sáng */
+.theme-switch-wrapper {
+  flex-shrink: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .header {
     padding: 0.5rem;
@@ -245,14 +262,14 @@ button:hover {
 
   .site-title {
     font-size: 1.2rem;
-    max-width: 50vw; /* Không vượt quá 50% màn hình */
+    max-width: 50vw;
   }
 
   .header .navbar {
-    display: none; /* Ẩn menu trên mobile */
+    display: none;
   }
 
-  .header .menu-btn {
+  .menu-btn {
     display: block;
   }
 }
@@ -274,6 +291,8 @@ button:hover {
     font-size: 1rem;
   }
 }
+
+
 
 
 

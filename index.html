@@ -209,6 +209,7 @@
 
 
   <!-- Phần Header Bắt đầu -->
+   
   <header class="header">
 
     <a href="#" class="logo">
@@ -274,6 +275,7 @@
 
   <!-- Phần Tải trước (Preloader) -->
   <script src="preloader.js"></script>
+  
 
   <!-- Phần Trang Chủ Bắt đầu -->
   <br><br><br><br><br><br>
@@ -292,29 +294,24 @@
 
 
   <script>
-    // Lấy nút toggle, thanh navbar (menu), và tất cả các liên kết trong navbar
-    const toggleBtn = document.querySelector('#menu-btn');
-    const navbar = document.querySelector('.navbar');
-    const navbarLinks = document.querySelectorAll('.navbar a');
+ document.addEventListener("DOMContentLoaded", function () {
+  const toggleBtn = document.querySelector("#menu-btn");
+  const navbar = document.querySelector(".navbar");
 
-    // Hàm để toggle navbar
-    toggleBtn.addEventListener('click', () => {
-      navbar.classList.toggle('active');
-    });
+  toggleBtn.addEventListener("click", function () {
+    navbar.classList.toggle("active");
+  });
 
-    // Hàm để đóng navbar khi người dùng nhấn vào một liên kết trong navbar
-    navbarLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navbar.classList.remove('active');
-      });
-    });
+  // Đóng menu khi click ra ngoài
+  document.addEventListener("click", function (event) {
+    if (!navbar.contains(event.target) && !toggleBtn.contains(event.target)) {
+      navbar.classList.remove("active");
+    }
+  });
+});
 
-    //Hàm để đóng navbar khi người dùng click ra ngoài navbar
-    document.addEventListener('click', function (event) {
-      if (!navbar.contains(event.target) && !toggleBtn.contains(event.target)) {
-        navbar.classList.remove('active');
-      }
-    });
+
+
 
     // Hiển thị pop-up tự động khi trang tải
     window.onload = function () {
