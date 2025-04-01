@@ -1321,7 +1321,7 @@ button:hover {
 .footer-row1 {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Social bên trái, Bản quyền bên phải */
+  justify-content: center; /* Social bên trái, Bản quyền bên phải */
   width: 100%;
   max-width: 1200px; /* Giới hạn chiều rộng */
   flex-wrap: wrap;
@@ -2353,63 +2353,6 @@ form h3 {
   margin-left: 5%;
 }
 
-.popup {
-  display: none;
-  position: fixed;
-
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  padding: 20px;
-  width: 50%;
-  height: 50%;
-  background: rgba(255, 255, 255, 0.8);
-  /* Màu trắng với độ trong suốt 90% */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  z-index: 1000;
-
-}
-
-.popup h2 {
-  margin-top: 0;
-  font-size: 3rem;
-  margin-top: 10px;
-  text-align: left;
-  margin: 10px;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-}
-
-.popup a {
-  font-size: 2rem;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  line-height: 1.8;
-  text-align: left;
-  align-items: center;
-  color: #333;
-
-}
-
-.close-btn {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 10px 40px;
-  cursor: pointer;
-  border-radius: 5px;
-
-  margin-right: 570px;
-  position: absolute;
-  bottom: 30px;
-  /* Cách cạnh dưới 50px */
-  left: 30px;
-  /* Cách cạnh trái 50px */
-}
-
 .overlay {
   display: none;
   position: fixed;
@@ -2420,6 +2363,85 @@ form h3 {
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  width: 50%;
+  max-width: 90vw; /* Không vượt quá 90% chiều rộng màn hình */
+  max-height: 90vh; /* Không vượt quá 90% chiều cao màn hình */
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  z-index: 1000;
+  overflow: auto; /* Thêm cuộn nếu nội dung quá lớn */
+}
+
+.popup h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.popup a {
+  font-size: 1.8rem;
+  display: flex;
+  flex-wrap: nowrap; /* Ngăn không cho xuống dòng */
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  color: #333;
+  white-space: nowrap; /* Chữ không tự động xuống dòng */
+  overflow: hidden; /* Ngăn tràn ra ngoài */
+  text-overflow: ellipsis; /* Hiển thị dấu "..." nếu nội dung quá dài */
+}
+
+.popup p {
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 2%;
+}
+
+.close-btn {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  font-size: 1.6rem;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .popup {
+    width: 80%;
+  }
+
+  .popup h2 {
+    font-size: 2rem;
+  }
+
+  .popup a {
+    font-size: 1.5rem;
+  }
+
+  .close-btn {
+    font-size: 1.4rem;
+  }
+}
+
 
 /*màu backgound*/
 .dropdown-content {
