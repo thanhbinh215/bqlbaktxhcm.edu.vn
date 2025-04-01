@@ -290,120 +290,129 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap; /* Không xuống dòng */
-  padding: 1rem;
+  width: 100vw; /* Full chiều rộng */
+  height: auto; /* Tự động điều chỉnh theo nội dung */
+  padding: 0.8rem 1rem;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   border-bottom: 2px solid #f83a0a;
-  overflow: hidden; /* Ngăn không cho phần tử bị tràn */
-  min-height: 70px; /* Đảm bảo header không bị co quá mức */
+  overflow: hidden; /* Ngăn tràn nội dung */
+  white-space: nowrap; /* Chống xuống dòng */
 }
 
 .header .logo img {
-  height: 5rem; /* Giảm chiều cao logo để tiết kiệm không gian */
-  flex-shrink: 0; /* Không cho logo thu nhỏ quá nhiều */
-}
-
-.header .site-title {
-  font-size: 2rem;
-  white-space: nowrap; /* Không cho chữ xuống dòng */
-  flex-grow: 1; /* Đảm bảo chiếm phần lớn không gian nhưng vẫn co lại */
-  text-align: left;
+  height: 5rem; /* Giảm kích thước ảnh trên mobile */
+  max-height: 10vh; /* Không vượt quá 10% chiều cao màn hình */
 }
 
 .header .navbar {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-shrink: 1; /* Cho phép menu thu nhỏ nhưng không bị mất */
-  transition: all 0.3s ease;
+  flex-wrap: nowrap; /* Không cho xuống dòng */
+  overflow: hidden;
 }
 
 .header .navbar a {
+  margin: 0 1rem;
   font-size: 1.4rem;
   color: var(--text-color);
   white-space: nowrap;
+}
+
+.header .navbar a:hover {
+  color: rgb(51, 168, 235) !important;
+}
+
+.site-title {
+  font-size: 1.8rem;
+  text-transform: uppercase;
   text-align: center;
-  padding: 5px 10px;
-  flex-shrink: 1;
+  flex-shrink: 1; /* Thu nhỏ nếu cần thiết */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .menu-btn {
-  display: none; /* Mặc định ẩn */
+  display: none;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--text-color);
-  margin-left: 10px;
-  flex-shrink: 0;
 }
 
-/* Responsive */
+.theme-switch-wrapper {
+  flex-shrink: 1;
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 1024px) {
   .header {
-    padding: 0.5rem; /* Giảm padding để tiết kiệm không gian */
+    padding: 0.5rem 1rem;
   }
 
-  .header .site-title {
-    font-size: 1.6rem; /* Thu nhỏ chữ tiêu đề */
+  .header .logo img {
+    height: 4rem;
+  }
+
+  .site-title {
+    font-size: 1.5rem;
   }
 
   .header .navbar a {
     font-size: 1.2rem;
-    padding: 3px 8px; /* Giảm padding */
+    margin: 0 0.5rem;
+  }
+
+  .menu-btn {
+    display: block;
   }
 }
 
 @media (max-width: 768px) {
   .header {
-    flex-wrap: nowrap; /* Không xuống dòng */
-    justify-content: space-between; /* Căn đều hai bên */
-    padding: 0.3rem;
-    min-height: 60px; /* Giữ header hiển thị đầy đủ */
+    padding: 0.5rem;
+    flex-wrap: nowrap;
   }
 
   .header .logo img {
-    height: 4rem; /* Giảm kích thước logo */
+    height: 3.5rem;
   }
 
-  .header .site-title {
-    font-size: 1.4rem; /* Giảm cỡ chữ */
+  .site-title {
+    font-size: 1.2rem;
+    max-width: 50vw; /* Không vượt quá 50% màn hình */
   }
 
   .header .navbar {
     display: none; /* Ẩn menu trên mobile */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: var(--background-color);
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, opacity 0.3s ease-in-out;
+  }
+
+  .header .menu-btn {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.4rem;
+  }
+
+  .header .logo img {
+    height: 3rem;
+  }
+
+  .site-title {
+    font-size: 1rem;
   }
 
   .header .navbar a {
     font-size: 1rem;
   }
-
-  .menu-btn {
-    display: block; /* Hiển thị nút menu */
-  }
-
-  /* Khi mở menu */
-  .header .navbar.active {
-    max-height: 300px;
-    opacity: 1;
-    padding: 1rem 0;
-    display: flex;
-  }
 }
+
 
 
 
