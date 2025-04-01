@@ -51,6 +51,7 @@ html ::-webkit-scrollbar-thumb {
 
 body {
   background-color: var(--background-color);
+  
 }
 
 section {
@@ -144,145 +145,6 @@ button:hover {
   color: var(--text-color);
 }
 
-/*wishlist styles */
-
-.wishlist-container {
-  position: absolute;
-  top: calc(100% + 1rem);
-  right: 7%;
-  width: 400px;
-  background-color: var(--background-color, #00000045);
-
-  padding: 2rem;
-  display: none;
-  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
-  z-index: 100;
-  border-radius: 25px;
-  max-height: 400px;
-  /* Limit height to enable scrolling */
-  overflow-y: auto;
-  /* Enable vertical scrolling */
-
-}
-
-/* Scrollbar styles for wishlist */
-.wishlist-container::-webkit-scrollbar {
-  width: 8px;
-  /* Same width as the cart scrollbar */
-}
-
-.wishlist-container::-webkit-scrollbar-track {
-  background-color: rgb(255, 255, 255);
-  /* Same track color as the cart */
-}
-
-.wishlist-container::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, rgb(198, 6, 153), rgb(232, 167, 218));
-  /* Same gradient as the cart scrollbar */
-  border-radius: 4px;
-  /* Rounded edges */
-  border: 1px solid rgb(217, 60, 178);
-  /* Same border color */
-  transition: background 0.3s ease-in-out;
-  /* Smooth transition */
-}
-
-.wishlist-container::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, rgb(214, 134, 181), rgb(225, 64, 166));
-  /* Same hover effect as the cart scrollbar */
-}
-
-.wishlist-container.active {
-  display: block;
-}
-
-.wishlist-container h2 {
-  color: yellow;
-  font-size: 2.4rem;
-  margin-bottom: 1.5rem;
-}
-
-#wishlistItems {
-  list-style-type: none;
-  padding: 0;
-}
-
-#wishlistItems li {
-  color: var(--main-color);
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.add-to-cart-btn {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.add-to-cart-btn:hover {
-  background-color: #388d3b;
-  color: white;
-}
-
-.remove-from-wishlist-btn {
-  background-color: #f44336;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.remove-from-wishlist-btn:hover {
-  background-color: #aa2f26;
-  color: white;
-}
-
-.clear-from-wishlist-btn {
-  background-color: #c49f6a;
-}
-
-.wishlist-container button {
-  width: 100%;
-  margin-top: 1.5rem;
-}
-
-.wishlist .box-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 1.5rem;
-}
-
-.wishlist .box-container .box {
-  padding: 3rem;
-  text-align: center;
-  border: var(--border);
-}
-
-.wishlist .box-container .box h3 {
-  color: var(--text-color);
-  font-size: 2rem;
-  padding: 1rem 0;
-}
-
-.wishlist .box-container .box .price {
-  color: var(--text-color);
-  font-size: 2.5rem;
-  padding: 0.5rem 0;
-}
-
-.wishlist .box-container .box:hover {
-  background-color: var(--background-color);
-}
-
-.wishlist .box-container .box:hover>* {
-  color: var(--text-color);
-}
 
 
 .header {
@@ -1588,6 +1450,8 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
+  padding: 0;
+  overflow-x: clip;
 }
 
 body {
