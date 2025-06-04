@@ -216,7 +216,7 @@ button:hover {
 /* Link trong navbar */
 .header .navbar a {
   font-size: 1.4rem;
-  color: #333;
+  
   padding: 10px 0;
   text-decoration: none;
   font-weight: bold;
@@ -1540,6 +1540,7 @@ body {
 }
 
 
+
 /* Toggle Switch */
 .theme-switch-wrapper {
   display: flex;
@@ -1695,7 +1696,7 @@ input:checked+.slider:before {
 }
 
 .social-icons a:hover {
-  color: black;
+  color: rgb(0, 0, 0);
   transform: scale(1.3) translateY(-5px);
   background-color: #9e9b9b;
   box-shadow: 0 0 25px #ffffff;
@@ -1842,6 +1843,7 @@ body {
 h2 {
   color: var(--text-color);
 }
+a {color: var(--text-color)}
 
 [data-theme="dark"] {
   --background-color: #0f2654;
