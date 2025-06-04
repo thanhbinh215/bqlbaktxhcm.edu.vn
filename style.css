@@ -315,10 +315,11 @@ button:hover {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: url("HomepageIMG2.png") no-repeat;
+  background: url("HomepageIMG3.png") no-repeat;
   background-size: cover;
   background-position: center;
   margin-top: -70px;
+  border-bottom: 2px solid #ff0000;
 }
 
 .home .content {
@@ -330,14 +331,14 @@ button:hover {
   font-size: 45px;
   text-transform: uppercase;
   /* color: var(--text-color); */
-  color: #fff;
+  color: #ff0000;
 }
 
 .home .content p {
   font-size: 20px;
   font-weight: lighter;
   /* color: var(--text-color); */
-  color: #fff;
+  color: #ff0000;
   padding: 1rem 0;
   line-height: 1.8;
 }
